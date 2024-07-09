@@ -119,7 +119,6 @@ namespace Utilities.ServiceLocator
             }
 
             service = null;
-            _logger.LogWarning($"ServiceManager.TryGet: Service of type {type.FullName} not found");
             return false;
         }
     }

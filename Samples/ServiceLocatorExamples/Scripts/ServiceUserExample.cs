@@ -9,14 +9,16 @@ namespace Utilities.ServiceLocator.Examples
 
         private void Start()
         {
-            _gameManagerService = ServiceLocator.Global.Get<IGameManagerService>();
-            _playerService = ServiceLocator.Global.Get<IPlayerService>();
+            ServiceLocator.For(this)
+                .Get(out _gameManagerService)
+                .Get(out _playerService);
 
-            //Safe check for service
-            if (!ServiceLocator.For(this).TryGet<IFirstSceneServiceOnly>(out var firastSceneService))
+            //Safe check for service achieving
+            if (!ServiceLocator.For(this).TryGet<IFirstSceneServiceOnly>(out _))
             {
                 Debug.LogWarning($"Service for {nameof(IFirstSceneServiceOnly)} is not available on that scene!");
             }
+            
             _gameManagerService.StartGame();
             _playerService.InitializePlayer("Player1");
 

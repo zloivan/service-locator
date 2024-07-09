@@ -61,7 +61,7 @@ namespace Utilities.ServiceLocator
         {
             lock (_lock)
             {
-                var locator = mb.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(mb) ?? Global;
+                var locator = mb.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(mb, true) ?? Global;
                 _logger.Log($"ServiceLocator.For: Retrieved ServiceLocator for {mb.name}", locator);
                 return locator;
             }
@@ -73,6 +73,11 @@ namespace Utilities.ServiceLocator
         /// <param name="mb">The MonoBehaviour to find the scene's ServiceLocator for.</param>
         /// <returns>The ServiceLocator instance for the scene.</returns>
         public static ServiceLocator ForSceneOf(MonoBehaviour mb)
+        {
+            return ForSceneOf(mb, false);
+        }
+
+        private static ServiceLocator ForSceneOf(MonoBehaviour mb, bool isFallback)
         {
             var scene = mb.gameObject.scene;
             lock (_lock)
@@ -92,17 +97,27 @@ namespace Utilities.ServiceLocator
                         continue;
 
                     bootstrapper.BootstrapOnDemand();
-                    
+
                     _logger.Log($"ServiceLocator.ForSceneOf: Bootstrapped scene ServiceLocator for {mb.name}",
                         bootstrapper);
                     return bootstrapper.Container;
                 }
 
-                _logger.LogWarning(
-                    $"ServiceLocator.ForSceneOf: No scene ServiceLocator found for {mb.name}, using Global.", mb);
+                if (isFallback)
+                {
+                    _logger.Log(
+                        $"ServiceLocator.ForSceneOf: No scene ServiceLocator found for {mb.name}, using Global.", mb);
+                }
+                else
+                {
+                    _logger.LogWarning(
+                        $"ServiceLocator.ForSceneOf: No scene ServiceLocator found for {mb.name}, using Global.", mb);
+                }
+
                 return Global;
             }
         }
+
 
         /// <summary>
         /// Gets a service of a specific type. If no service of the required type is found, an error is thrown.
@@ -201,15 +216,11 @@ namespace Utilities.ServiceLocator
             {
                 var success = _services.TryGet(out service) ||
                               TryGetNextInHierarchy(out var container) && container.TryGet(out service);
-                if (success)
-                {
-                    _logger.Log($"ServiceLocator.TryGet: Successfully retrieved service of type {typeof(T).FullName}",
-                        this);
-                }
-                else
-                {
-                    _logger.LogWarning($"ServiceLocator.TryGet: Service of type {typeof(T).FullName} not found", this);
-                }
+                _logger.Log(
+                    success
+                        ? $"ServiceLocator.TryGet: Successfully retrieved service of type {typeof(T).FullName}"
+                        : $"ServiceLocator.TryGet: Service of type {typeof(T).FullName} not found",
+                    this);
 
                 return success;
             }
@@ -303,7 +314,8 @@ namespace Utilities.ServiceLocator
                 return false;
             }
 
-            container = transform.parent.OrNull()?.GetComponentInParent<ServiceLocator>().OrNull() ?? ForSceneOf(this);
+            container = transform.parent.OrNull()?.GetComponentInParent<ServiceLocator>().OrNull() ??
+                        ForSceneOf(this, true);
             return container != null;
         }
 
