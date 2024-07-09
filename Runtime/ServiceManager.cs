@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ServiceLocator.Runtime.helpers;
+using Utilities.ServiceLocator.helpers;
 using Utilities.ServiceLocator.exceptions;
 
 namespace Utilities.ServiceLocator

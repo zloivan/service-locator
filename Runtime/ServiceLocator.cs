@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ServiceLocator.Runtime.helpers;
+using Utilities.ServiceLocator.helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities.ServiceLocator.exceptions;
 using Utilities.ServiceLocator.extensions;
-using ILogger = ServiceLocator.Runtime.helpers.ILogger;
+using ILogger = Utilities.ServiceLocator.helpers.ILogger;
 
 namespace Utilities.ServiceLocator
 {

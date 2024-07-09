@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ServiceLocator.Runtime.helpers
+namespace Utilities.ServiceLocator.helpers
 {
     public interface ILogger
     {
