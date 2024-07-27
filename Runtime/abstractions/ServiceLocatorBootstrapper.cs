@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using Utilities.ServiceLocator.extensions;
+﻿using IKhom.ServiceLocatorSystem.Runtime.extensions;
+using UnityEngine;
 
-namespace Utilities.ServiceLocator.abstractions
+namespace IKhom.ServiceLocatorSystem.Runtime.abstractions
 {
     [DisallowMultipleComponent]
     [RequireComponent(typeof(ServiceLocator))]

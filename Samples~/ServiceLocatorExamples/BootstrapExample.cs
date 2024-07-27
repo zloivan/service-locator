@@ -1,6 +1,8 @@
+using IKhom.ServiceLocatorSystem.Runtime;
+using ServiceLocatorSystem.Samples.ServiceLocatorExamples.MockServices;
 using UnityEngine;
 
-namespace Utilities.ServiceLocator.Examples
+namespace ServiceLocatorSystem.Samples.ServiceLocatorExamples
 {
     public class AppLevelBootstrapExample : MonoBehaviour
     {

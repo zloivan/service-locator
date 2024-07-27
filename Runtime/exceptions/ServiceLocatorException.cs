@@ -1,18 +1,18 @@
 using System;
 
-namespace Utilities.ServiceLocator.exceptions
+namespace IKhom.ServiceLocatorSystem.Runtime.exceptions
 {
-    public class ServiceLocatorException : Exception
+    internal class ServiceLocatorException : Exception
     {
-        public ServiceLocatorException()
+        internal ServiceLocatorException()
         {
         }
 
-        public ServiceLocatorException(string message) : base(message)
+        internal ServiceLocatorException(string message) : base(message)
         {
         }
 
-        public ServiceLocatorException(string message, Exception inner) : base(message, inner)
+        internal ServiceLocatorException(string message, Exception inner) : base(message, inner)
         {
         }
     }

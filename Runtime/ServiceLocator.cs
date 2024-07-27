@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Utilities.ServiceLocator.helpers;
+using IKhom.ServiceLocatorSystem.Runtime.exceptions;
+using IKhom.ServiceLocatorSystem.Runtime.extensions;
+using IKhom.ServiceLocatorSystem.Runtime.helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utilities.ServiceLocator.exceptions;
-using Utilities.ServiceLocator.extensions;
-using ILogger = Utilities.ServiceLocator.helpers.ILogger;
 
-namespace Utilities.ServiceLocator
+namespace IKhom.ServiceLocatorSystem.Runtime
 {
     /// <summary>
     /// Service Locator for managing service registration and retrieval at global or scene level.
@@ -21,7 +20,7 @@ namespace Utilities.ServiceLocator
         private static Dictionary<Scene, ServiceLocator> _sceneContainers;
         private static List<GameObject> _tmpSceneGameObjects;
 
-        private static ILogger _logger = new ServiceLocatorLogger();
+        private static helpers.ILogger _logger = new ServiceLocatorLogger();
         private static readonly object _lock = new();
 
         private readonly ServiceManager _services = new();

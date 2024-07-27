@@ -1,15 +1,15 @@
 using UnityEngine;
 
-namespace Utilities.ServiceLocator.helpers
+namespace IKhom.ServiceLocatorSystem.Runtime.helpers
 {
-    public interface ILogger
+    internal interface ILogger
     {
         public void Log(object message, Object context = null);
         public void LogWarning(object message, Object context = null);
         public void LogError(object message, Object context = null);
     }
 
-    public class ServiceLocatorLogger : ILogger
+    internal class ServiceLocatorLogger : ILogger
     {
         public void Log(object message, Object context)
         {

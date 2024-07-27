@@ -1,7 +1,7 @@
+using IKhom.ServiceLocatorSystem.Runtime.abstractions;
 using UnityEngine;
-using Utilities.ServiceLocator.abstractions;
 
-namespace Utilities.ServiceLocator
+namespace IKhom.ServiceLocatorSystem.Runtime
 {
     /// <summary>
     /// Configures the service container to be globally accessible.

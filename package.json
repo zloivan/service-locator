@@ -1,13 +1,16 @@
 {
   "name": "com.zloivan.unity-service-locator",
-  "version": "1.0.0",
-  "displayName": "Unity Service Locator",
+  "version": "1.0.1",
+  "displayName": "IKhom Service Locator",
   "description": "A flexible service locator implementation for Unity, that supports scene and global registration of services",
   "unity": "2019.1",
   "keywords": [
     "unity",
     "service locator"
   ],
+  "_upm": {
+    "changelog": "- Adjust namespaces and assemblies"
+  },
   "author": {
     "name": "Ivan Khomichkov",
     "url": "https://github.com/zloivan"

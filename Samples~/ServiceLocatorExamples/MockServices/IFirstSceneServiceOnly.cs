@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Utilities.ServiceLocator.Examples
+namespace ServiceLocatorSystem.Samples.ServiceLocatorExamples.MockServices
 {
     public interface IFirstSceneServiceOnly
     {

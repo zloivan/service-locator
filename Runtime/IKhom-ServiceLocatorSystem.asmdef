@@ -1,6 +1,6 @@
 {
-    "name": "ServiceLocator",
-    "rootNamespace": "Utilities",
+    "name": "IKhom-ServiceLocatorSystem",
+    "rootNamespace": "IKhom",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

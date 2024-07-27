@@ -1,7 +1,9 @@
+using IKhom.ServiceLocatorSystem.Runtime;
+using ServiceLocatorSystem.Samples.ServiceLocatorExamples.MockServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Utilities.ServiceLocator.Examples
+namespace ServiceLocatorSystem.Samples.ServiceLocatorExamples
 {
     public class ServiceSceneLevelUser : MonoBehaviour
     {

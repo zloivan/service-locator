@@ -1,0 +1,17 @@
+{
+    "name": "IKhom-ServiceLocatorSystem-Samples",
+    "rootNamespace": "",
+    "references": [
+        "IKhom-ServiceLocatorSystem",
+        "ServiceLocatorSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

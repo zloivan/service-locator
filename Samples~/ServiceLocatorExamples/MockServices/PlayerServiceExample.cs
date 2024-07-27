@@ -1,4 +1,4 @@
-namespace Utilities.ServiceLocator.Examples
+namespace ServiceLocatorSystem.Samples.ServiceLocatorExamples.MockServices
 {
     public interface IPlayerService
     {

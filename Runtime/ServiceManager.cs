@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using Utilities.ServiceLocator.helpers;
-using Utilities.ServiceLocator.exceptions;
+using IKhom.ServiceLocatorSystem.Runtime.exceptions;
+using IKhom.ServiceLocatorSystem.Runtime.helpers;
 
-namespace Utilities.ServiceLocator
+namespace IKhom.ServiceLocatorSystem.Runtime
 {
     /// <summary>
     /// Manages the registration and retrieval of services.
     /// </summary>
-    public class ServiceManager
+    internal class ServiceManager
     {
         private readonly object _lock = new object();
         private readonly Dictionary<Type, object> _services = new();
