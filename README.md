@@ -17,7 +17,7 @@ To install this package, follow these steps:
 1. Open your Unity project
 2. Open the Package Manager (Window > Package Manager)
 3. Click the "+" button and choose "Add package from git URL"
-4. Enter the following URL: `https://github.com/zloivan/ServiceLocator.git`
+4. Enter the following URL: `https://github.com/zloivan/service-locator.git`
 5. Click "Add"
 
 Alternatively, you can add the following line to your `manifest.json` file in the `Packages` folder of your Unity project:
