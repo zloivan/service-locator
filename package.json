@@ -1,5 +1,5 @@
 {
-  "name": "com.zloivan.unity-service-locator",
+  "name": "com.zloivan.servicelocator",
   "version": "1.0.1",
   "displayName": "IKhom Service Locator",
   "description": "A flexible service locator implementation for Unity, that supports scene and global registration of services",
